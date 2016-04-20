@@ -228,6 +228,10 @@ Server(int sd)  // IN
 
     Log("\nClient %s (sock=%u) connected\n", cliName, sd);
 
+    /*
+	Insert select statement somewhere here
+    */
+
     if (ReadFully(sd, &req, sizeof(req)) > 0) {
         for (i = 0; i < ARRAYSIZE(msgHandlers); i++) {
             MsgHandler *handler = &msgHandlers[i];
